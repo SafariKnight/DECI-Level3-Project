@@ -1,0 +1,102 @@
+@import url(styles.css);
+
+.border {
+  border-bottom: var(--border);
+  border-top: var(--border);
+}
+
+.seperated {
+  margin: 0.125rem;
+}
+
+.seperated-l {
+  margin: 1rem;
+}
+
+.padded-vertical {
+  padding: 1.125rem 0;
+}
+.padded-horizontal {
+  padding: 0 1.125rem;
+}
+
+.text-emphasis {
+  color: var(--text-emphasis);
+}
+.text-emphasis-secondary {
+  color: var(--text-emphasis-secondary);
+}
+
+nav {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-areas:
+    "home"
+    "info"
+    "name";
+  align-items: center;
+  justify-items: center;
+  /* justify-content: center; */
+}
+
+nav > ul {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1.5rem;
+}
+
+@media only screen and (hover:hover) {
+  .nav-name:hover {
+    color: var(--text-emphasis);
+    span {
+      color: var(--text);
+    }
+  }
+}
+
+.hero-section {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "about";
+
+  justify-items: center;
+  align-items: start;
+  background-color: var(--background-secondary);
+  color: var(--white);
+}
+
+.hero-section > p {
+  max-width: 30rem;
+  font-size: 1.125rem;
+
+  grid-area: about;
+
+  align-self: center;
+  justify-self: center;
+}
+
+.hero-section img {
+  grid-area: img;
+  max-width: 90vw;
+  margin: 0;
+  padding: 0;
+  justify-self: center;
+}
+
+.hero-section > div {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.blogs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

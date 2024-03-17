@@ -1,0 +1,30 @@
+:root {
+  --black: #0d0d0d;
+  --white: #f3f3f3;
+  --grey: #1A1A1A;
+
+  /* Normal Colors */
+  --n-aqua: #7faec7;
+  --n-red: #a34344;
+  --n-lime: #d4edc4;
+
+  /* Dark Colors */
+  --d-aqua: #085178;
+  --d-red: #5e0d0f;
+  --d-lime: #416f25;
+
+  /* Bright Colors */
+  --b-aqua: #a6defc;
+  --b-red: #f0adae;
+  --b-lime: #d6f3c4;
+
+  /* UI Colors */
+  --background: var(--grey);
+  --background-secondary: var(--black);
+
+  --text: var(--white);
+  --text-emphasis: var(--n-red);
+  --text-emphasis-secondary: var(--b-lime);
+
+  --border: 3px solid var(--n-aqua);
+}
