@@ -1,5 +1,6 @@
 @import url(styles.css);
 
+/* This looked the nicest */
 @media (max-width: 599px) {
   nav {
     flex-direction: column;
@@ -34,6 +35,11 @@ nav > div:hover > span {
 }
 
 .hero-section p {
+  /* Clamp takes three values */
+  /* Minimum | Actual | Maximum */
+  /* Acutal gets evaluated but it's value is restricted by */
+  /* Minimum and Maximum */
+  /* Useful for responsive layouts without media queries */
   font-size: clamp(1.125rem, 1.75vw, 1.5rem);
 }
 
@@ -42,10 +48,11 @@ nav > div:hover > span {
   height: auto;
 }
 
+/* Convert hero section to single column layout on */
+/* Small screens and smaller */
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
-    gap: 0;
   }
 }
 
@@ -76,6 +83,7 @@ nav > div:hover > span {
   text-align: center;
 }
 
+/* Shift elements for side-by-side layout */
 @media (min-width: 1025px) {
   .blog-list article {
     grid-template-areas:
