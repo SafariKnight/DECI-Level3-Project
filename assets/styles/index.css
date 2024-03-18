@@ -3,6 +3,7 @@
 /* This looked the nicest */
 /* Uses new-ish media query range syntax */
 /* More readable than old syntax */
+/* Uses >, >=, <, <= and = like other languages */
 @media (width < 600px) {
   nav {
     flex-direction: column;
@@ -46,7 +47,7 @@ nav > div:hover > span {
 }
 
 .hero-section img {
-  max-width: clamp(300px, 40vw, 100%);
+  max-width: clamp(300px, 60vw, 100%);
   height: auto;
 }
 
