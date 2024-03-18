@@ -113,11 +113,16 @@ nav > div:hover > span {
       "img author"
       "img headline";
   }
-  .blog-list article p,
+  .blog-list article p {
+    margin: 0;
+    justify-self: start;
+  }
   .blog-list article div {
+    margin-left: 7.5%;
     justify-self: start;
   }
   .blog-list article img {
+    margin: 0;
     justify-self: end;
   }
 }
