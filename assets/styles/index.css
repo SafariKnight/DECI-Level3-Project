@@ -1,7 +1,9 @@
 @import url(styles.css);
 
 /* This looked the nicest */
-@media (max-width: 599px) {
+/* Uses new-ish media query range syntax */
+/* More readable than old syntax */
+@media (width < 600px) {
   nav {
     flex-direction: column;
   }
@@ -50,7 +52,7 @@ nav > div:hover > span {
 
 /* Convert hero section to single column layout on */
 /* Small screens and smaller */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .hero-section {
     flex-direction: column;
   }
@@ -84,7 +86,7 @@ nav > div:hover > span {
 }
 
 /* Shift elements for side-by-side layout */
-@media (min-width: 1025px) {
+@media (width > 1024px) {
   .blog-list article {
     grid-template-areas:
       "img author"
