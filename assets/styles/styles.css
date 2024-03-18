@@ -21,3 +21,34 @@ a {
 a:hover {
   color: var(--text-emphasis)
 }
+
+.border {
+  border-bottom: var(--border);
+  border-top: var(--border);
+}
+
+.seperated {
+  margin: 0.125rem;
+}
+
+.seperated-l {
+  margin: 1rem;
+}
+
+.padded {
+  padding: 1.125rem;
+}
+
+.padded-vertical {
+  padding: 1.125rem 0;
+}
+.padded-horizontal {
+  padding: 0 1.125rem;
+}
+
+.text-emphasis {
+  color: var(--text-emphasis);
+}
+.text-emphasis-secondary {
+  color: var(--text-emphasis-secondary);
+}

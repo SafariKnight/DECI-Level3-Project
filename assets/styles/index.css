@@ -1,98 +1,76 @@
 @import url(styles.css);
 
-.border {
-  border-bottom: var(--border);
-  border-top: var(--border);
-}
-
-.seperated {
-  margin: 0.125rem;
-}
-
-.seperated-l {
-  margin: 1rem;
-}
-
-.padded-vertical {
-  padding: 1.125rem 0;
-}
-.padded-horizontal {
-  padding: 0 1.125rem;
-}
-
-.text-emphasis {
-  color: var(--text-emphasis);
-}
-.text-emphasis-secondary {
-  color: var(--text-emphasis-secondary);
+@media (max-width: 599px) {
+  nav {
+    flex-direction: column;
+  }
 }
 
 nav {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr; */
-  /* grid-template-rows: 1fr 1fr; */
-  grid-template-areas:
-    "home"
-    "info"
-    "name";
+  display: flex;
   align-items: center;
-  justify-items: center;
-  /* justify-content: center; */
+  justify-content: space-between;
 }
 
 nav > ul {
-  list-style: none;
-
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 1.5rem;
+  list-style: none;
+  gap: 0.75rem;
 }
 
-@media only screen and (hover:hover) {
-  .nav-name:hover {
-    color: var(--text-emphasis);
-    span {
-      color: var(--text);
-    }
+
+nav > div:hover {
+  color: var(--text-emphasis);
+  span {
+    color: var(--text);
   }
 }
 
 .hero-section {
-  display: grid;
-  grid-template-areas:
-    "img"
-    "about";
-
-  justify-items: center;
-  align-items: start;
   background-color: var(--background-secondary);
-  color: var(--white);
-}
-
-.hero-section > p {
-  max-width: 30rem;
-  font-size: 1.125rem;
-
-  grid-area: about;
-
-  align-self: center;
-  justify-self: center;
-}
-
-.hero-section img {
-  grid-area: img;
-  max-width: 90vw;
-  margin: 0;
-  padding: 0;
-  justify-self: center;
 }
 
 .hero-section > div {
-  width: 100%;
-  justify-content: center;
+  box-sizing: border-box;
+  width: 93%;
   display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 2rem;
+  text-align: center;
+  align-items: center;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+}
+
+.hero-section img {
+  --max-width: 55%;
+  max-width: var(--max-width);
+  max-height: calc(var(--max-width) * 9 / 16);
+}
+
+/* @media (max-width: 768px) { */
+@media (max-width: 1024px) {
+  .hero-section > div {
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-section img {
+    --max-width: 100%;
+    max-width: var(--max-width);
+    max-height: calc(var(--max-width) * 9 / 16);
+  }
+  .hero-section p {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 789px) and (max-width: 1201px) {
+  .hero-section p {
+    font-size: 1.125rem;
+  }
 }
 
 .blogs {
