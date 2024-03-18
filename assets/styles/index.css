@@ -27,48 +27,25 @@ nav > div:hover > span {
 
 .hero-section {
   background-color: var(--background-secondary);
-}
 
-.hero-section > div {
-  box-sizing: border-box;
-  width: 93%;
   display: flex;
-  justify-content: center;
-  margin: auto;
-  gap: 2rem;
   text-align: center;
   align-items: center;
 }
 
 .hero-section p {
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 1.75vw, 1.5rem);
 }
 
 .hero-section img {
-  --max-width: 55%;
-  max-width: var(--max-width);
-  max-height: calc(var(--max-width) * 9 / 16);
+  max-width: clamp(300px, 40vw, 100%);
+  height: auto;
 }
 
-/* @media (max-width: 768px) { */
 @media (max-width: 1024px) {
-  .hero-section > div {
+  .hero-section {
     flex-direction: column;
     gap: 0;
-  }
-  .hero-section img {
-    --max-width: 100%;
-    max-width: var(--max-width);
-    max-height: calc(var(--max-width) * 9 / 16);
-  }
-  .hero-section p {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 789px) and (max-width: 1201px) {
-  .hero-section p {
-    font-size: 1.125rem;
   }
 }
 
@@ -80,8 +57,6 @@ nav > div:hover > span {
 
 .blog-list {
   display: grid;
-  height: 100%;
-  width: 100%;
 
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   justify-items: center;
@@ -99,12 +74,6 @@ nav > div:hover > span {
   align-items: center;
   justify-items: center;
   text-align: center;
-}
-
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .blog-list {
-    grid-template-columns: minmax(300px, auto);
-  }
 }
 
 @media (min-width: 1025px) {
@@ -129,14 +98,12 @@ nav > div:hover > span {
 
 .blog-list article > img {
   grid-area: img;
-  width: 80%;
-  /* margin: 0.625rem; */
+  width: 100%;
 }
 
 .blog-list article a {
   grid-area: headline;
   margin: 0.625rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .author-info {
@@ -154,8 +121,4 @@ nav > div:hover > span {
 
 .author-info img {
   width: 2rem;
-}
-
-.test {
-  font-family: Calibri
 }
