@@ -27,8 +27,12 @@ a:hover {
   border-top: var(--border);
 }
 
+.border-full {
+  border: var(--border)
+}
+
 .seperated {
-  margin: 0.125rem;
+  margin: 0.5rem;
 }
 
 .seperated-l {
