@@ -66,6 +66,14 @@ main {
     max-width: 80ch;
     margin-top: 3lvw;
     justify-self: center;
+
+    h2 {
+      margin: 1em 0;
+    }
+
+    p {
+      margin: 0 1em;
+    }
   }
 }
 
