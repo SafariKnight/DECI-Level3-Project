@@ -74,7 +74,7 @@
 
       p {
         align-self: center;
-        color: var(--b-lime);
+        color: var(--text-emphasis-secondary);
       }
       img {
         width: 2rem;

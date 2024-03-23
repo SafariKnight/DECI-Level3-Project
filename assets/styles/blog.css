@@ -32,18 +32,19 @@ main {
   }
 
   #author-info {
-    grid-area: author;
     justify-self: start;
     align-items: center;
 
     display: flex;
     font-size: 1rem;
+
+    gap: 1rem;
     p {
       align-self: center;
-      color: var(--b-lime);
+      color: var(--text-emphasis-secondary);
     }
-    img {
-      width: 2rem;
+    i {
+      font-size: 1rem;
       aspect-ratio: 1;
     }
     ul {
@@ -52,6 +53,19 @@ main {
       gap: 1rem;
       list-style: none;
     }
+
+    #about-author {
+      color: var(--text);
+      font-size: 1rem;
+      max-width: 10ch;
+    }
+  }
+  #main-content {
+    grid-area: content;
+    font-size: clamp(0.75rem, 2lvw,1.175rem);
+    max-width: 80ch;
+    margin-top: 3lvw;
+    justify-self: center;
   }
 }
 
