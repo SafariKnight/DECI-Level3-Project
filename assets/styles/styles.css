@@ -60,3 +60,30 @@ a:hover {
 .alternate-font {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Nesting Styles inside each other */
+  /* Very Nice to read */
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 0.75rem;
+  }
+
+  > div:hover {
+    color: var(--text-emphasis);
+    span {
+      color: var(--text);
+    }
+  }
+  border-bottom: var(--border);
+}
+
+@media (width < 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
