@@ -1,1 +1,62 @@
 @import url(styles.css);
+
+main {
+  width: clamp(80%, 100% - 10vw, 100%);
+  height: 100%;
+
+  background-color: var(--background-secondary);
+  margin: auto;
+  display: grid;
+
+  padding: 0.5rem;
+
+  grid-template-areas:
+    "img info"
+    "content content";
+  align-items: center;
+  img {
+    width: clamp(70%, 80vw, 100%);
+    grid-area: img;
+  }
+
+  section {
+    grid-area: info;
+    padding: clamp(0.5rem, 5vw, 1.5rem);
+    align-self: start;
+    justify-self: center;
+
+    > h3 {
+      font-size: clamp(1em, 3vw, 2em);
+    }
+  }
+
+  .author-info {
+    grid-area: author;
+    justify-self: start;
+
+    display: flex;
+    font-size: 1rem;
+    p {
+      align-self: center;
+      color: var(--b-lime);
+    }
+    img {
+      width: 2rem;
+      aspect-ratio: 1;
+    }
+  }
+
+  h3 {
+    grid-area: info;
+  }
+}
+
+@media (width <= 1024px) {
+  main {
+    grid-template-areas:
+      "img"
+      "info"
+      "content";
+    justify-items: center;
+  }
+}
