@@ -19,7 +19,7 @@
     font-size: clamp(1.125rem, 1.75lvw, 1.5rem);
   }
   img {
-    max-width: clamp(300px, 60lvw, 100%);
+    width: clamp(300px, 60lvw, 100%);
     height: auto;
   }
 }
