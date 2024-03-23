@@ -4,32 +4,6 @@
 /* Uses new-ish media query range syntax */
 /* More readable than old syntax */
 /* Uses >, >=, <, <= and = like other languages */
-@media (width < 600px) {
-  nav {
-    flex-direction: column;
-  }
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* Nesting Styles inside each other */
-  /* Very Nice to read */
-  ul {
-    display: flex;
-    list-style: none;
-    gap: 0.75rem;
-  }
-
-  > div:hover {
-    color: var(--text-emphasis);
-    span {
-      color: var(--text);
-    }
-  }
-}
-
 .hero-section {
   background-color: var(--background-secondary);
 
