@@ -14,12 +14,13 @@ main {
     "img info"
     "content content";
   align-items: center;
+
   img {
     width: clamp(70%, 80vw, 100%);
     grid-area: img;
   }
 
-  section {
+  #article-info {
     grid-area: info;
     padding: clamp(0.5rem, 5vw, 1.5rem);
     align-self: start;
@@ -30,9 +31,10 @@ main {
     }
   }
 
-  .author-info {
+  #author-info {
     grid-area: author;
     justify-self: start;
+    align-items: center;
 
     display: flex;
     font-size: 1rem;
@@ -44,10 +46,12 @@ main {
       width: 2rem;
       aspect-ratio: 1;
     }
-  }
-
-  h3 {
-    grid-area: info;
+    ul {
+      margin-left: 0.625rem;
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
   }
 }
 
