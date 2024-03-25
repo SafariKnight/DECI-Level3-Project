@@ -1,0 +1,76 @@
+const buttonList = document.querySelectorAll(".button--calculator");
+const calculatorText = document.querySelector(".js-calcText");
+calculatorText.innerText = "";
+
+const calculatorTokenize = (input) => {
+  let operator = "";
+
+  switch(true) {
+    case input.includes("+"):
+      operator = "+"
+      break;
+    case input.includes("-"):
+      operator = "-"
+      break;
+    case input.includes("<"):
+      operator = "<"
+      break;
+    case input.includes(">"):
+      operator = ">"
+      break;
+    default:
+      console.err("Tokenize fail")
+      return
+  }
+
+  let segments = input.split(operator)
+  let num1 = segments[0]
+  let num2 = segments[1]
+
+  return operator, num1, num2;
+}
+
+const calculatorParse = (calcText) => {
+   calculator
+}
+
+const calculatorInput = (append) => {
+  switch (append) {
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+    case "0":
+      calculatorText.innerText += append;
+      break;
+    case "+":
+    case "-":
+    case ">":
+    case "<":
+      // Only allow one operator
+      if (
+        calculatorText.innerText.includes("+") ||
+        calculatorText.innerText.includes("-") ||
+        calculatorText.innerText.includes(">") ||
+        calculatorText.innerText.includes("<")
+      )
+        break;
+
+      calculatorText.innerText += append;
+      break;
+    case "=":
+      
+  }
+};
+
+
+buttonList.forEach((button) => {
+  button.addEventListener("click", () => {
+    calculatorInput(button.innerText);
+  });
+});

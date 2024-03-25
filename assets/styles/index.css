@@ -1,6 +1,9 @@
 @import url(styles.css);
 
-/* This looked the nicest */
+.container {
+  display: grid;
+}
+
 /* Uses new-ish media query range syntax */
 /* More readable than old syntax */
 /* Uses >, >=, <, <= and = like other languages */

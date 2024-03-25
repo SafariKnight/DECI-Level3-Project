@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Math</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script
+      src="https://kit.fontawesome.com/f8453972b4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/index.js" defer></script>
+  </head>
+  <body>
+    <!-- This is made using the CSS methodology called BEM https://getbem.com/ -->
+    <!-- I didn't use it before because I hadn't learned about it -->
+    <header class="login bg-emphasis padding-8">
+      <div class="login__form">
+        <div class="login__field login__field--name margin-8">
+          <label class="login__label" for="username">What is your name?</label>
+          <input class="login__input" type="text" id="username" />
+        </div>
+        <div class="login__field login__field--age margin-8">
+          <label class="login__label" for="age">What is your age?</label>
+          <input class="login__input" type="text" id="age" />
+        </div>
+        <button class="button button--login" type="submit">Login</button>
+      </div>
+      <p class="login__as">Logged in as Mostafa</p>
+    </header>
+    <main class="main-content">
+      <div class="img-container bg-secondary">
+        <img
+          class="content__img margin-auto"
+          src="assets/img/books.jpg"
+          alt="books"
+        />
+      </div>
+      <div class="quiz bg-secondary">
+        <p class="quiz__equation bg-primary js-displayEquation"></p>
+        <div class="quiz__calculator padding-24">
+          <div class="calculator__text bg-primary">
+            <p class="js-calcText">10 + 10</p>
+          </div>
+          <div class="calculator__buttons margin-8">
+            <div class="calculator__numbers">
+              <button class="button button--calculator">7</button>
+              <button class="button button--calculator">8</button>
+              <button class="button button--calculator">9</button>
+              <button class="button button--calculator">4</button>
+              <button class="button button--calculator">5</button>
+              <button class="button button--calculator">6</button>
+              <button class="button button--calculator">1</button>
+              <button class="button button--calculator">2</button>
+              <button class="button button--calculator">3</button>
+              <button class="button button--calculator">0</button>
+            </div>
+            <div class="calculator__operators">
+              <button class="button button--calculator">C</button>
+              <button class="button button--calculator">+</button>
+              <button class="button button--calculator">-</button>
+              <button class="button button--calculator">></button>
+              <button class="button button--calculator"><</button>
+              <button class="button button--calculator">=</button>
+            </div>
+          </div>
+        </div>
+        <div class="calculator__answer">
+          <div class="answer__text hide">
+            <input class="calculator__input" type="text" />
+          </div>
+          <div class="answer__bool hide"><button class="button button--question">
+            <i class="fa-solid fa-check"></i>
+          </button>
+          <button class="button button--qustion">
+            <i class="fa-solid fa-xmark"></i>
+          </button></div>
+        </div>
+      </div>
+    </main>
+    <footer class="information">
+      <p class="information__correct">Correct: 10</p>
+      <p class="information__streak">Streak: 3</p>
+    </footer>
+  </body>
+</html>
