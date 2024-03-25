@@ -1,0 +1,197 @@
+@import url(themes/bluelight.css);
+
+/* Select all elements including before and after pseudo elements */
+*,
+*::before,
+*::after {
+  /* Counts the padding, margin and border as part of */
+  /* the width/height */
+  box-sizing: border-box;
+}
+
+:root {
+  /* Font sizes */
+  /* --fs-200: 0.25rem; */
+  /* --fs-300: 0.5rem; */
+  --fs-12: 0.75rem;
+  --fs-16: 1rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-28: 1.75rem;
+  --fs-32: 2rem;
+}
+
+/* Utility Classes */
+.padding-48 {
+  padding: 3rem;
+}
+
+.padding-24 {
+  padding: 1.5rem;
+}
+
+.padding-16 {
+  padding: 1rem;
+}
+
+.padding-8 {
+  padding: 0.5rem;
+}
+
+.padding-auto {
+  padding: auto;
+}
+
+.margin-24 {
+  margin: 1.5 rem;
+}
+
+.margin-8 {
+  margin: 0.5rem;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hide {
+  display: none !important;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: var(--fs-16);
+  margin: 0;
+  padding: 0;
+}
+
+.login {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.login__input {
+  display: flex;
+}
+
+.login__form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (width <= 704px) {
+  .login__form {
+    flex-direction: column;
+    align-items: end;
+  }
+  
+  .button--login {
+    align-self: center;
+  }
+}
+
+.login__field {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.button {
+  background-color: var(--clr-primary-800);
+  border: solid 2px var(--clr-primary-700);
+  color: var(--clr-neutral-100);
+}
+
+.button--login {
+  height: 2rem;
+}
+
+.main-content {
+  display: grid;
+  justify-items: center;
+}
+
+.img-container {
+  display: flex;
+  width: 80%;
+}
+
+.content__img {
+  width: min(80%, 50rem);
+}
+
+.quiz {
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+
+  align-items: center;
+  flex-direction: column;
+}
+
+.quiz__equation {
+  border-radius: 50px;
+  border: 2px solid var(--clr-neutral-800);
+  width: 80%;
+  text-align: center;
+  font-size: var(--fs-24);
+  height: 2rem;
+}
+
+.quiz__calculator {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+@media (width <= 1024px) {
+  .quiz__calculator {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.calculator__text {
+  width: 100%;
+  font-size: var(--fs-32);
+  text-align: center;
+  border-radius: 50px;
+  border: 2px solid var(--clr-neutral-800);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button--calculator {
+  width: 3rem;
+}
+
+.calculator__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calculator__numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0.25rem;
+}
+
+.calculator__numbers > *:last-child {
+  grid-column: 1 / span 3;
+  width: auto;
+}
+
+.calculator__operators {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
