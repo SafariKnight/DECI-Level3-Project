@@ -39,4 +39,5 @@
 body {
   background-color: var(--clr-neutral-800);
   color: var(--clr-neutral-100);
+  color-scheme: dark;
 }
