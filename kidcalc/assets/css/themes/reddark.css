@@ -37,6 +37,7 @@
 }
 
 body {
-  background-color: var(--clr-neutral-800);
+  background-color: var(--clr-neutral-800) !important;
   color: var(--clr-neutral-100);
+  color-scheme: dark;
 }

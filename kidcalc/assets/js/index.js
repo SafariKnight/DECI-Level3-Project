@@ -12,6 +12,17 @@ calculatorText.innerText = "";
 let overwrite = false;
 const user = document.querySelector("#username");
 
+document.querySelector("#theme").addEventListener("change", (e) => {
+  let theme = e.target.value;
+
+  // Create a new element to add to the header for the theme
+  let themeElement = document.createElement("link");
+  themeElement.rel = "stylesheet";
+  themeElement.type = "text/css";
+  themeElement.href = "assets/css/themes/" + theme + ".css";
+  document.getElementsByTagName("head")[0].appendChild(themeElement);
+});
+
 const saveToLocal = () => {
   const username = document.querySelector(".js-user").innerText;
   localStorage.setItem(username.toLowerCase() + "wins", winsNum);

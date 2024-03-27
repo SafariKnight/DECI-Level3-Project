@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn Math</title>
-    <link rel="stylesheet" href="assets/css/index.css" />
     <script
       src="https://kit.fontawesome.com/f8453972b4.js"
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/index.js" defer></script>
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
     <!-- This is made using the CSS methodology called BEM https://getbem.com/ -->
@@ -26,7 +26,17 @@
         </div>
         <button class="button button--login" type="submit">Login</button>
       </div>
-      <p class="login__as">Logged in as <span class="js-user">Guest</span></p>
+      <div class="flex">
+        <p class="login__as">Logged in as <span class="js-user">Guest</span></p>
+
+        Theme:
+        <select name="theme" id="theme">
+          <option value="bluelight">Light Blue</option>
+          <option value="redlight">Light Red</option>
+          <option value="bluedark">Dark Blue</option>
+          <option value="reddark">Dark Red</option>
+        </select>
+      </div>
     </header>
     <main class="main-content">
       <div class="img-container bg-secondary">
@@ -68,7 +78,9 @@
         <div class="calculator__answer">
           <div class="answer__text hide">
             <input class="calculator__input js-input" type="text" />
-            <button class="button button--submit js-submit-answer">Submit</button>
+            <button class="button button--submit js-submit-answer">
+              Submit
+            </button>
           </div>
           <div class="answer__bool hide">
             <button data-value="yes" class="button button--question">
@@ -90,7 +102,11 @@
           Streak: <span class="js-count-streak">0</span>
         </p>
       </div>
-      <img class="information__img margin-auto" src="assets/img/abacus.jpg" alt="abacus" />
+      <img
+        class="information__img margin-auto"
+        src="assets/img/abacus.jpg"
+        alt="abacus"
+      />
     </footer>
   </body>
 </html>
