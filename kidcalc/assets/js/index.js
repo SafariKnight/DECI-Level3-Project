@@ -9,6 +9,38 @@ let streakNum = 0;
 let result;
 let currentCalc;
 calculatorText.innerText = "";
+let overwrite = false;
+const user = document.querySelector("#username");
+
+const saveToLocal = () => {
+  const username = document.querySelector(".js-user").innerText;
+  localStorage.setItem(username.toLowerCase() + "wins", winsNum);
+  localStorage.setItem(username.toLowerCase() + "streak", streakNum);
+};
+
+const loadFromLocal = (username) => {
+  let wins = localStorage.getItem(username.toLowerCase() + "wins");
+  let streak = localStorage.getItem(username.toLowerCase() + "streak");
+  document.querySelector(".js-user").innerText = username;
+  if (wins === null || streak === null) {
+    winsNum = 0;
+    streakNum = 0;
+    return;
+  }
+  winsNum = wins;
+  streakNum = streak;
+};
+
+document.querySelector(".button--login").addEventListener("click", () => {
+  const username = user.value;
+  loadFromLocal(username);
+  updateStats()
+});
+
+const updateStats = () => {
+  wins.innerText = winsNum;
+  streak.innerText = streakNum;
+};
 
 // Functional version of objects
 const calculatorObject = (operator, num1, num2, result) => {
@@ -96,6 +128,11 @@ const calculatorInput = (append) => {
     case "8":
     case "9":
     case "0":
+      if (overwrite) {
+        calculatorText.innerText = append;
+        overwrite = false;
+        break;
+      }
       calculatorText.innerText += append;
       break;
     case "+":
@@ -120,11 +157,13 @@ const calculatorInput = (append) => {
         case "+":
         case "-":
           document.querySelector(".answer__text").className = "answer__text";
-          document.querySelector(".answer__bool").className = "answer__bool hide";
+          document.querySelector(".answer__bool").className =
+            "answer__bool hide";
           break;
         case ">":
         case "<":
-          document.querySelector(".answer__text").className = "answer__text hide";
+          document.querySelector(".answer__text").className =
+            "answer__text hide";
           document.querySelector(".answer__bool").className = "answer__bool";
           break;
       }
@@ -152,7 +191,34 @@ submit.addEventListener("click", () => {
     calculatorText.innerText = currentCalc.result;
   }
 
-  wins.innerText = winsNum;
-  streak.innerText = streakNum;
+  updateStats()
   currentCalc = undefined;
+  overwrite = true;
+  saveToLocal();
+});
+
+document.querySelectorAll(".button--question").forEach((button) => {
+  button.addEventListener("click", () => {
+    let choice = button.dataset.value;
+    let input;
+
+    if (choice === "yes") input = true;
+    else if (choice === "no") input = false;
+    else return;
+
+    if (currentCalc === undefined) return;
+    if (input == currentCalc.result) {
+      displayEquation.innerText = "Correct";
+      winsNum += 1;
+      streakNum += 1;
+    } else {
+      displayEquation.innerText = "Wrong";
+      streakNum = 0;
+    }
+
+    updateStats()
+    currentCalc = undefined;
+    overwrite = true;
+    saveToLocal();
+  });
 });
