@@ -1,6 +1,11 @@
 const buttonList = document.querySelectorAll(".button--calculator");
 const calculatorText = document.querySelector(".js-calcText");
 const displayEquation = document.querySelector(".js-displayEquation");
+const submit = document.querySelector(".js-submit-answer");
+const wins = document.querySelector(".js-count-correct");
+let winsNum = 0;
+const streak = document.querySelector(".js-count-streak");
+let streakNum = 0;
 let result;
 let currentCalc;
 calculatorText.innerText = "";
@@ -76,7 +81,10 @@ const calculatorInput = (append) => {
   switch (append) {
     case "C":
       calculatorText.innerText = "";
+      displayEquation.innerText = "";
       currentCalc = undefined;
+      document.querySelector(".answer__text").className = "answer__text hide";
+      document.querySelector(".answer__bool").className = "answer__bool hide";
       break;
     case "1":
     case "2":
@@ -112,13 +120,11 @@ const calculatorInput = (append) => {
         case "+":
         case "-":
           document.querySelector(".answer__text").className = "answer__text";
-          document.querySelector(".answer__bool").className =
-            "answer__bool hide";
+          document.querySelector(".answer__bool").className = "answer__bool hide";
           break;
         case ">":
         case "<":
-          document.querySelector(".answer__text").className =
-            "answer__text hide";
+          document.querySelector(".answer__text").className = "answer__text hide";
           document.querySelector(".answer__bool").className = "answer__bool";
           break;
       }
@@ -130,4 +136,23 @@ buttonList.forEach((button) => {
   button.addEventListener("click", () => {
     calculatorInput(button.innerText);
   });
+});
+
+submit.addEventListener("click", () => {
+  let input = document.querySelector(".js-input").value;
+  if (currentCalc === undefined) return;
+  if (input == currentCalc.result) {
+    displayEquation.innerText = "Correct";
+    winsNum += 1;
+    streakNum += 1;
+    calculatorText.innerText = currentCalc.result;
+  } else {
+    displayEquation.innerText = "Wrong";
+    streakNum = 0;
+    calculatorText.innerText = currentCalc.result;
+  }
+
+  wins.innerText = winsNum;
+  streak.innerText = streakNum;
+  currentCalc = undefined;
 });

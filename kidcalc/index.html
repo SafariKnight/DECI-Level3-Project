@@ -67,13 +67,14 @@
         </div>
         <div class="calculator__answer">
           <div class="answer__text hide">
-            <input class="calculator__input" type="text" />
+            <input class="calculator__input js-input" type="text" />
+            <button class="button button--submit js-submit-answer">Submit</button>
           </div>
           <div class="answer__bool hide">
             <button class="button button--question">
               <i class="fa-solid fa-check"></i>
             </button>
-            <button class="button button--qustion">
+            <button class="button button--question">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -83,10 +84,10 @@
     <footer class="information bg-emphasis">
       <div class="information__game padding-16">
         <p class="information__correct margin-auto">
-          Correct: <span class="js-count-correct">10</span>
+          Correct: <span class="js-count-correct">0</span>
         </p>
         <p class="information__streak margin-auto">
-          Streak: <span class="js-count-streak">3</span>
+          Streak: <span class="js-count-streak">0</span>
         </p>
       </div>
       <img class="information__img margin-auto" src="assets/img/abacus.jpg" alt="abacus" />
