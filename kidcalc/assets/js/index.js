@@ -34,7 +34,7 @@ const loadFromLocal = (username) => {
 document.querySelector(".button--login").addEventListener("click", () => {
   const username = user.value;
   loadFromLocal(username);
-  updateStats()
+  updateStats();
 });
 
 const updateStats = () => {
@@ -191,7 +191,7 @@ submit.addEventListener("click", () => {
     calculatorText.innerText = currentCalc.result;
   }
 
-  updateStats()
+  updateStats();
   currentCalc = undefined;
   overwrite = true;
   saveToLocal();
@@ -216,7 +216,7 @@ document.querySelectorAll(".button--question").forEach((button) => {
       streakNum = 0;
     }
 
-    updateStats()
+    updateStats();
     currentCalc = undefined;
     overwrite = true;
     saveToLocal();

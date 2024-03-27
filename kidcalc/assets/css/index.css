@@ -1,4 +1,7 @@
-@import url(themes/bluelight.css);
+/* @import url(themes/redlight.css); */
+/* @import url(themes/bluelight.css); */
+/* @import url(themes/bluedark.css); */
+@import url(themes/reddark.css);
 
 /* Select all elements including before and after pseudo elements */
 *,
