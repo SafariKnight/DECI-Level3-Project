@@ -200,4 +200,13 @@ body {
   display: flex;
   min-height: 50px;
   font-size: var(--fs-32);
+  flex-direction: column;
+}
+
+.information__game {
+  display: flex;
+}
+
+.information__img {
+  width: min(60%, 30rem);
 }
