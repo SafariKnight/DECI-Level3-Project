@@ -1,6 +1,6 @@
 const buttonList = document.querySelectorAll(".button--calculator");
 const calculatorText = document.querySelector(".js-calcText");
-const displayEquation = document.querySelector(".js-displayEquation")
+const displayEquation = document.querySelector(".js-displayEquation");
 let result;
 let currentCalc;
 calculatorText.innerText = "";
@@ -107,17 +107,19 @@ const calculatorInput = (append) => {
       break;
     case "=":
       currentCalc = calculatorParse(calculatorText.innerText);
-      displayEquation.innerText = `${currentCalc.num1} ${currentCalc.operator} ${currentCalc.num2}`
-      switch(currentCalc.operator) {
+      displayEquation.innerText = `${currentCalc.num1} ${currentCalc.operator} ${currentCalc.num2}`;
+      switch (currentCalc.operator) {
         case "+":
         case "-":
-          document.querySelector(".answer__text").className = "answer__text"
-          document.querySelector(".answer__bool").className = "answer__bool hide"
+          document.querySelector(".answer__text").className = "answer__text";
+          document.querySelector(".answer__bool").className =
+            "answer__bool hide";
           break;
         case ">":
         case "<":
-          document.querySelector(".answer__text").className = "answer__text hide"
-          document.querySelector(".answer__bool").className = "answer__bool"
+          document.querySelector(".answer__text").className =
+            "answer__text hide";
+          document.querySelector(".answer__bool").className = "answer__bool";
           break;
       }
       break;

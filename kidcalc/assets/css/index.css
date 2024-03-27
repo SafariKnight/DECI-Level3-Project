@@ -195,3 +195,9 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.information {
+  display: flex;
+  min-height: 50px;
+  font-size: var(--fs-32);
+}
